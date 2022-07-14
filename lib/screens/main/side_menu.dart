@@ -52,10 +52,10 @@ class SideMenu extends StatelessWidget {
                     SizedBox(height: defaultPadding / 2),
                     TextButton(
                       onPressed: () async{
-                        Responsive.isDesktop(context)?_launchUrl('https://drive.google.com/file/d/1sji0yyXBqZSDx4bf-KE4gBO5TqJEF_d5/view?usp=sharing'):
+                        Responsive.isMobile(context)?
                         showDialog(
                             context: context,
-                            builder: (context) => const DownloadingDialog());
+                            builder: (context) => const DownloadingDialog()):_launchUrl('https://drive.google.com/file/d/1sji0yyXBqZSDx4bf-KE4gBO5TqJEF_d5/view?usp=sharing');
                       },
                       child: FittedBox(
                         child: Row(
